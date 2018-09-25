@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom'
 import './App.css';
 import Login from './components/login'
-import Dash from './components/dash2'
+import Dash from './components/dashboard'
 import './App.css'
 class App extends Component {
   render() {
