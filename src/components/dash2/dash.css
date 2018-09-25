@@ -1,0 +1,39 @@
+.APP-DEFAULT{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+.DASH-WRAP{
+    width: 400px;
+  height: 600px;
+}
+
+.verticalRow{
+    display: flex;
+    flex-direction: column
+
+}
+
+.row {
+    display: flex;
+    width: 100%;
+  }
+.AppBar{
+    width: 100%;
+}
+
+
+.item{
+    height: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: lighter;
+    font-size: 1.4em;
+    background-color: #e0e1e6;
+    color: #888888;
+    flex: 1;
+    outline: 1px solid #888888;
+}
