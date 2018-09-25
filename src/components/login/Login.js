@@ -3,6 +3,8 @@ import { Typography, Divider, TextField, Input, Button, InputLabel, FormControl,
 import { Visibility, VisibilityOff, } from '@material-ui/icons'
 import { withStyles } from '@material-ui/core/styles'
 import PropTypes from 'prop-types'
+import { BrowserRouter as Router, withRouter } from 'react-router-dom'
+
 //import axios from 'axios'
 
 const styles = theme => ({
@@ -104,6 +106,8 @@ class Login extends Component {
         } catch (error) {
             console.log(error)
         }
+        this.props.history.push('/dashboard')
+        //history.push('/dashboard')
     }
 
     render() {
@@ -187,7 +191,8 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-    classes: PropTypes.object.isRequired
+    classes: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired,
 }
 
-export default withStyles(styles)(Login)
+export default withRouter(withStyles(styles)(Login))

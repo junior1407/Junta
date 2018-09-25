@@ -4,7 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-
+import { BrowserRouter as Router, withRouter} from 'react-router-dom'
 import { withStyles } from '@material-ui/core/styles'
 import PropTypes from 'prop-types'
 //import axios from 'axios'
@@ -24,6 +24,25 @@ const styles = theme => ({
 })
 
 class Header extends Component {
+  constructor(props) {
+    super(props)
+    this.handleLogout = this.handleLogout.bind(this)
+}
+
+  async handleLogout() {
+    try {
+     //   await axios.post('http://localhost:3001/auth/authenticate', { email, password })
+     //       .then(res => {
+     //           console.log("Response Received: ", res)
+
+    //        })
+    } catch (error) {
+        console.log(error)
+    }
+    this.props.history.push('/')
+    //history.push('/dashboard')
+}
+
   render() {
   
   
@@ -35,7 +54,7 @@ class Header extends Component {
           <Typography variant="title" color="inherit" className={classes.grow}>
             Dashboard
         </Typography>
-          <Button color="inherit">Logout</Button>
+          <Button color="inherit" onClick={this.handleLogout}>Logout</Button>
         </Toolbar>
       </AppBar>
     </div>
@@ -43,6 +62,7 @@ class Header extends Component {
   }
 }
 Header.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired,
 }
-export default withStyles(styles)(Header)
+export default withRouter(withStyles(styles)(Header))
